@@ -18,6 +18,7 @@ public class ArrayQueue<T> implements Queue<T> {
 	
 	@Override
 	public void enqueue(T object) {
+		
 		// NOTE: This was not in the notes, but you need to check if the queue
 		// is full. This happens when the array has only one free cell left in
 		// it (i.e. N = size+1) because, if the array is used in its entirety,
@@ -26,6 +27,7 @@ public class ArrayQueue<T> implements Queue<T> {
 		if (array.length == size()+1) throw new QueueFullException();
 		array[rear] = object;
 		rear = (rear + 1) % array.length;
+		
 	}
 
 	@Override
